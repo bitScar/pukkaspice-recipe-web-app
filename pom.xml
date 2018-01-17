@@ -40,7 +40,6 @@
 	<modules>
 		<module>pukkaspice-server</module>
 		<module>pukkaspice-web</module>
-		<module>pukkaspice-acceptance</module>
 		<module>pukkuspice-data</module>
 		<module>pukkaspice-acceptance-ui</module>
 	</modules>

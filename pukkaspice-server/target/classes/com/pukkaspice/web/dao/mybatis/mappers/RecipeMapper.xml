@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+			     
+<mapper namespace="com.pukkaspice.web.dao.mybatis.mappers.RecipeMapper">
+
+	<resultMap id="recipeSummaryResultMap" type="RecipeSummary" autoMapping="false">
+		<id property="recipeId" column="recipeId" />
+		<result property="name" column="name" />
+		<result property="datePublished" column="datePublished" />
+		<result property="publish" column="publish" />
+		<result property="recipeState" column="recipeState" />
+		<result property="description" column="description" />
+		<result property="category" column="category" />
+		<result property="imageLocation" column="imageLocation" />
+		<result property="imageName" column="imageName" />
+		<result property="reviewCount" column="reviewCount" />
+		<result property="ratingValue" column="ratingValue" />
+	</resultMap>
+	
+	<resultMap id="recipeResultMap" type="Recipe">
+		<id property="recipeId" column="recipeId" />
+		<!-- Summary -->
+		<result property="name" column="name" />
+		<result property="datePublished" column="datePublished" />
+		<result property="publish" column="publish" />
+		<result property="recipeState" column="recipeState" />
+		<result property="description" column="description" />
+		<result property="category" column="category" />
+		<result property="imageLocation" column="imageLocation" />
+		<result property="imageName" column="imageName" />
+		<result property="reviewCount" column="reviewCount" />
+		<result property="ratingValue" column="ratingValue" />
+		<!-- Other -->
+		<result property="alternativeIdeas" column="alternativeIdeas" />
+		<result property="prepTime" column="prepTime" />
+		<result property="cookTime" column="cookTime" />
+		<result property="totalTime" column="totalTime" />
+		<result property="recipeYield" column="recipeYield" />
+		
+		<association property="userSummary" javaType="UserSummary" >
+			<id property="userId" column="userId" />
+			<result property="forename" column="forename" />
+			<result property="surname" column="surname" />
+			<result property="profileDescription" column="profileDescription" />
+			<result property="imageName" column="userImageName" />
+			<result property="imageLocation" column="userImageLocation" />
+		</association>
+		
+		<collection property="ingredients" ofType="Ingredient">
+			<id property="ingredientId" column="ingredientId"/>
+			<result property="quantity" column="quantity" />
+			<result property="measurement" column="measurement" />
+			<result property="description" column="ingredientDescription" />
+		</collection>
+		
+		<collection property="recipeInstructions" ofType="Instruction">
+			<id property="instructionId" column="instructionId"/>
+			<result property="description" column="instructionDescription" />
+		</collection>
+		
+	</resultMap>
+
+	<select id="getCategoryCount" resultType="int">
+		SELECT COUNT(1) AS categoryCount
+		FROM recipe r
+		WHERE r.category = #{category} AND r.dateDeleted IS NULL AND r.recipeState = 'PUBLISHED'
+	</select>
+	
+	<sql id="recipeSummaryColumns">r.name, r.datePublished, r.publish, r.recipeState, r.description, r.category, r.imageLocation, r.imageName, r.reviewCount, r.ratingValue, r.dateDeleted </sql>
+	<sql id="recipeColumns"> r.alternativeIdeas, r.prepTime, r.cookTime, r.totalTime, r.recipeYield </sql>
+	<sql id="recipeSummaryColumnsNoPrefx">name, datePublished, publish, recipeState, description, category, imageLocation, imageName, reviewCount, ratingValue, dateDeleted </sql>
+	<sql id="recipeColumnsNoPrefx"> alternativeIdeas, prepTime, cookTime, totalTime, recipeYield </sql>
+	
+	<select id="getRecipeSummariesInCategory" resultMap="recipeSummaryResultMap">
+		select 
+			r.recipeId, 
+			<include refid="recipeSummaryColumns"/>  
+		from recipe r
+		where r.category = #{category} AND r.dateDeleted IS NULL AND r.recipeState = 'PUBLISHED'
+		LIMIT #{skipRows}, #{pageSize}
+	</select>
+	
+	<select id="getRandomRecipeSummaries" resultMap="recipeSummaryResultMap">
+		SELECT 
+			r.recipeId, 
+			<include refid="recipeSummaryColumns"/>
+		FROM recipe r, (
+			SELECT recipeId
+			FROM recipe
+			ORDER BY RAND( )
+			LIMIT 10
+		) tmp
+		WHERE r.recipeId = tmp.recipeId AND r.dateDeleted IS NULL AND r.recipeState = 'PUBLISHED';
+	</select>
+	
+	<select id="searchRecipeSummaries" resultMap="recipeSummaryResultMap">
+		select 
+			r.recipeId, 
+			<include refid="recipeSummaryColumns"/>  
+		from recipe r
+		where r.name LIKE  '%${name}%' AND r.dateDeleted IS NULL AND r.recipeState = 'PUBLISHED'
+	</select>
+	
+	<select id="getRecipe" resultMap="recipeResultMap" parameterType="int">
+		SELECT 
+		  r.recipeId, 
+		  <include refid="recipeSummaryColumns"/> , 
+		  <include refid="recipeColumns"/> ,
+		  i.ingredientId, i.recipeId, i.quantity, i.measurement, i.description AS ingredientDescription,
+		  inst.instructionId, inst.recipeId, inst.description AS instructionDescription,
+		  u.userId, u.forename, u.surname, u.profileDescription, u.imageName AS userImageName, u.imageLocation as userImageLocation 
+		  
+		FROM recipe r
+		LEFT OUTER JOIN ingredient i ON r.recipeId = i.recipeId
+		LEFT OUTER JOIN instruction inst ON i.recipeId = inst.recipeId
+		LEFT OUTER JOIN user u on r.userId = u.userId
+		WHERE r.recipeId = #{recipeId}
+	</select>
+
+	<insert id="insertRecipe" useGeneratedKeys="true" keyProperty="recipeId">
+		INSERT INTO recipe(
+			userId,
+		    <include refid="recipeSummaryColumnsNoPrefx"/> , 
+			<include refid="recipeColumnsNoPrefx"/> 
+		) VALUES (
+		  #{userSummary.userId},
+		  #{name},
+		  #{datePublished},
+		  #{publish},
+		  #{recipeState},
+		  #{description},
+		  #{category},
+		  #{imageLocation},
+		  #{imageName},
+		  0,
+		  0,
+		  NULL,
+		  #{alternativeIdeas},
+		  #{prepTime},
+		  #{cookTime},
+		  #{totalTime},
+		  #{recipeYield}
+		)
+	</insert>
+	
+	<update id="updateRecipe">
+		UPDATE recipe 
+		SET 
+			name = #{name}, 
+			datePublished = #{datePublished, javaType=java.util.Date, jdbcType=DATE},
+			publish = #{publish},
+			recipeState = #{recipeState},
+			description = #{description}, 
+			category = #{category}, 
+			imageName = #{imageName}, 
+			imageLocation = #{imageLocation}, 
+			alternativeIdeas = #{alternativeIdeas}, 
+			prepTime = #{prepTime}, 
+			cookTime = #{cookTime}, 
+			totalTime = #{totalTime}, 
+			recipeYield = #{recipeYield}
+		WHERE recipeId = #{recipeId}
+	</update>
+	
+	<insert id="insertIngredient" useGeneratedKeys="true" keyProperty="ingredientId">
+		INSERT INTO ingredient (recipeId, quantity, measurement, description) 
+		VALUES (
+			#{recipeId}, 
+			#{quantity}, 
+			#{measurement}, 
+			#{description}
+		)
+	</insert>
+	
+	<delete id="deleteRemovedIngredients">
+		DELETE FROM ingredient
+		WHERE recipeId = #{recipeId}
+		<if test="ingredients != null and ingredients.size() > 0 ">
+    		AND ingredientId NOT IN
+  		</if>
+		<foreach item="ingredient" index="index" collection="ingredients" open="(" separator="," close=")">
+			#{ingredient.ingredientId}
+		</foreach>
+	</delete>
+	
+	<update id="updateIngredient">
+		UPDATE ingredient 
+		SET 
+			quantity = #{quantity}, 
+			measurement = #{measurement}, 
+			description = #{description} 
+		WHERE ingredientId = #{ingredientId}
+	</update>
+	
+	<insert id="insertInstruction" useGeneratedKeys="true" keyProperty="instructionId">
+		INSERT INTO instruction (recipeId, description) 
+		VALUES (
+			#{recipeId}, 
+			#{description}
+		)
+	</insert>
+	
+	<delete id="deleteRemovedInstructions">
+		DELETE FROM instruction
+		WHERE recipeId = #{recipeId}
+		<if test="recipeInstructions != null and recipeInstructions.size() > 0 ">
+    		AND instructionId NOT IN
+  		</if>
+		<foreach item="instruction" index="index" collection="recipeInstructions" open="(" separator="," close=")">
+			#{instruction.instructionId}
+		</foreach>
+	</delete>
+	
+	<update id="updateInstruction">
+		UPDATE instruction 
+		SET 
+			description = #{description} 
+		WHERE instructionId = #{instructionId}
+	</update>
+	
+	<select id="getRecipeSummariesForUser" parameterType="UserSummary" resultMap="recipeSummaryResultMap">
+		select 
+			r.recipeId, 
+			<include refid="recipeSummaryColumns"/>  
+		from recipe r
+		where r.userId = #{userId} AND r.dateDeleted IS NULL 
+	</select>
+	
+	<update id="deleteRecipe">
+		UPDATE recipe 
+		SET 
+			dateDeleted = NOW()
+		WHERE recipeId = #{recipeId}
+	</update>
+
+</mapper>

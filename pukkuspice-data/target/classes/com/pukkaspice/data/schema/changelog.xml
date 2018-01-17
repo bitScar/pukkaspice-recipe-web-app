@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd 
+		http://www.liquibase.org/xml/ns/dbchangelog-ext 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="Chris Hatton" id="2016.1-1">
+		<createTable tableName="ingredient">
+			<column autoIncrement="true" name="ingredientId" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="recipeId" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="quantity" type="FLOAT(12)">
+				<constraints nullable="false" />
+			</column>
+			<column name="measurement" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Chris Hatton" id="2016.1-2">
+		<createTable tableName="instruction">
+			<column autoIncrement="true" name="instructionId" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="recipeId" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Chris Hatton" id="2016.1-3">
+		<createTable tableName="recipe">
+			<column autoIncrement="true" name="recipeId" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="userId" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+			<column name="datePublished" type="date">
+				<constraints nullable="true" />
+			</column>
+			<column name="publish" type="BOOLEAN" defaultValue="0"/>
+			<column name="recipeState" type="VARCHAR(20)" />
+			<column name="description" type="VARCHAR(500)" />
+			<column name="category" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="imageName" type="VARCHAR(100)" />
+			<column name="imageLocation" type="VARCHAR(100)" />
+			<column name="alternativeIdeas" type="VARCHAR(500)" />
+			<column name="prepTime" type="INT" />
+			<column name="cookTime" type="INT" />
+			<column name="totalTime" type="INT" />
+			<column name="recipeYield" type="VARCHAR(20)" />
+			<column defaultValueNumeric="0" name="reviewCount" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValueNumeric="0.0" name="ratingValue" type="FLOAT(12)">
+				<constraints nullable="false" />
+			</column>
+			<column name="dateDeleted" type="date" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Chris Hatton" id="2016.1-4">
+		<createTable tableName="user">
+			<column autoIncrement="true" name="userId" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="forename" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+			<column name="surname" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+			<column name="profileDescription" type="VARCHAR(200)" />
+			<column name="imageName" type="VARCHAR(20)" />
+			<column name="imageLocation" type="VARCHAR(20)" />
+			<column name="emailAddress" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="password" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="registrationDate" type="date">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Chris Hatton" id="2016.1-4.1" >
+		<createIndex 
+            indexName="idx_emailAddress"
+            tableName="user"
+            unique="true">
+        <column name="emailAddress" type="varchar(200)"/>
+    	</createIndex>
+	</changeSet>
+
+	<changeSet author="Chris Hatton" id="2016.1-5">
+		<createTable tableName="useremailverification">
+			<column name="userId" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="verificationKey" type="CHAR(36)">
+				<constraints nullable="false" />
+			</column>
+			<column name="verifitcationDate" type="date" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Chris Hatton" id="2016.1-6">
+		<createTable tableName="passwordresetwindow">
+			<column name="emailAddress" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="resetKey" type="CHAR(36)">
+				<constraints nullable="false" />
+			</column>
+			<column name="experationDate" type="date">
+				<constraints nullable="false" />
+			</column>
+			<column name="dateChanged" type="date" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Chris Hatton" id="2016.1-7">
+		<createTable tableName="userroles">
+			<column name="userId" type="int">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="role" type="VARCHAR(50)">
+				<constraints primaryKey="true" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<!-- This is going to be the send release -->
+	<changeSet author="Chris Hatton" id="2016.2-1">
+	    <modifyDataType 
+	    	columnName="imageName"
+	        newDataType="VARCHAR(300)"
+	        tableName="recipe"/>
+	    <modifyDataType 
+	        columnName="imageName"
+	        newDataType="VARCHAR(300)"
+	        tableName="user"/>
+	</changeSet>
+	
+</databaseChangeLog>

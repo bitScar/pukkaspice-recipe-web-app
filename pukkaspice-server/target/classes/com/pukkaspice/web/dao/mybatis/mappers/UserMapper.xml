@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+			     
+<mapper namespace="com.pukkaspice.web.dao.mybatis.mappers.UserMapper">
+
+	<resultMap id="userSummaryResultMap" type="UserSummary">
+		<id property="userId" column="userId" />
+		<result property="forename" column="forename" />
+		<result property="surname" column="surname" />
+		<result property="profileDescription" column="profileDescription" />
+		<result property="imageName" column="imageName" />
+		<result property="imageLocation" column="imageLocation" />
+	</resultMap>
+	
+	<resultMap id="verificationRecordMap" type="VerificationRecord">
+		<result property="userId" column="userId" />
+		<result property="key" column="verificationKey" />
+		<result property="verificationDate" column="verificationDate" />
+	</resultMap>
+	
+	<resultMap id="passwordResetWindowMap" type="PasswordResetWindow">
+		<result property="emailAddress" column="emailAddress" />
+		<result property="resetKey" column="resetKey" />
+		<result property="experationDate" column="experationDate" />
+		<result property="dateChanged" column="dateChanged" />
+	</resultMap>
+	
+	
+	<select id="getUserSummaryByEmailAddress" resultMap="userSummaryResultMap">
+		SELECT userId, forename, surname, profileDescription, imageName, imageLocation, emailAddress, password 
+		FROM user
+		WHERE emailAddress = #{emailAddress} AND password = #{hashedPassword}
+	</select>
+	
+	<select id="getUserById" resultMap="userSummaryResultMap">
+		SELECT userId, forename, surname, profileDescription, imageName, imageLocation, emailAddress, password 
+		FROM user
+		WHERE userId = #{userId}
+	</select>
+	
+	<select id="getUserRoles" parameterType="int" resultType="com.pukkaspice.web.common.security.UserRole">
+		SELECT role 
+		FROM userroles
+		WHERE userId = #{userId}
+	</select>
+	
+	<insert id="insertUserRole">
+		INSERT INTO userroles (userId, role) 
+		VALUES (
+			#{userId}, 
+			#{userRole}
+		);
+	</insert>
+	
+	<insert id="insertNewUserSummary" useGeneratedKeys="true" keyColumn="userId" keyProperty="userSummary.userId">
+		INSERT INTO user(
+	   		forename, 
+	   		surname, 
+	   		emailAddress, 
+	   		password, 
+	   		profileDescription, 
+	   		imageName, 
+	   		imageLocation,
+	   		registrationDate
+		) VALUES (
+		   	#{userSummary.forename},
+			#{userSummary.surname},
+		  	#{userSummary.emailAddress},
+		 	#{hashedPassword},
+		 	#{userSummary.profileDescription},
+		 	#{userSummary.imageName},
+		 	#{userSummary.imageLocation},
+		 	NOW()
+		)
+	</insert>
+	
+	<select id="getEmailAddressVerificationRecord" resultMap="verificationRecordMap">
+		SELECT userId, verificationKey, verifitcationDate 
+		FROM useremailverification
+		WHERE verificationKey = #{verificationKey}
+	</select>
+	
+	<insert id="insertEmailAddressVerificationRecord">
+		INSERT INTO useremailverification (userId, verificationKey) 
+		VALUES (
+			#{userId}, 
+			#{verificationKey}
+		);
+	</insert>
+	
+	<update id="updateEmailAddressVerificationRecord" parameterType="com.pukkaspice.web.common.model.user.VerificationRecord">
+		UPDATE useremailverification 
+		SET verifitcationDate = #{verificationDate} 
+		WHERE verificationKey = #{key}
+	</update>	
+	
+	<select id="isUserExists" resultType="Boolean">
+		select
+		CASE WHEN count(*) > 0 THEN 1 ELSE 0 END as userExists
+		from user
+		where emailAddress = #{emailAddress}
+	</select>
+	
+	<insert id="insertPasswordResetWindow" parameterType="PasswordResetWindow">
+		INSERT INTO passwordresetwindow (emailAddress, resetKey, experationDate) 
+		VALUES (
+			#{emailAddress},
+			#{resetKey}, 
+			#{experationDate} 
+		);
+	</insert>
+	
+	<select id="getPasswordResetWindow" resultMap="passwordResetWindowMap">
+		SELECT emailAddress, resetKey, experationDate, dateChanged 
+		FROM passwordresetwindow
+		WHERE resetKey = #{resetKey}
+	</select>
+	
+	<update id="updateUserPassword">
+		UPDATE pukkaspice.user 
+		SET password = #{hashedPassword} 
+		WHERE emailAddress = #{emailAddress}
+		
+	</update>
+
+	<update id="updatePasswordResetWindow" parameterType="PasswordResetWindow">
+		UPDATE passwordresetwindow 
+		SET dateChanged = #{dateChanged}
+		WHERE emailAddress = #{emailAddress} AND resetKey = #{resetKey}
+	</update>	
+	
+	<update id="updateUserSummary" parameterType="UserSummary">
+		UPDATE user 
+		SET forename = #{forename}, 
+			surname = #{surname}, 
+			profileDescription = #{profileDescription}, 
+			imageName = #{imageName}, 
+			imageLocation = #{imageLocation}, 
+			emailAddress = #{emailAddress}
+		WHERE userId = #{userId}
+	</update>
+	
+</mapper>
