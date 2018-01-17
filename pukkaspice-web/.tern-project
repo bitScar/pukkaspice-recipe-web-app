@@ -1,0 +1,1 @@
+{"ide":{"scriptPaths":[{"type":"FOLDER","path":"src/main/webapp/resources/angluarjs"},{"type":"FILE","path":"src/main/webapp/resources/angluarjs/controllers/add-recipe.js"},{"type":"FOLDER","path":"src/main/webapp/resources/angluarjs/controllers"}]},"plugins":{"guess-types":{},"outline":{},"angular":{}},"libs":["ecma5","browser"]}

@@ -1,0 +1,634 @@
+/* line 4, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.docs-w {
+  padding-bottom: 40px;
+}
+
+/* Special grid styles
+-------------------------------------------------- */
+/* line 10, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* line 14, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.show-grid [class*="span"] {
+  background-color: #B3D8CF;
+  text-align: center;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+/* line 20, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.show-grid:hover [class*="span"] {
+  background: #fff;
+}
+
+/* line 23, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.show-grid .show-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 27, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.show-grid .show-grid [class*="span"] {
+  background-color: #d9ede8;
+}
+
+/* Mini layout previews
+-------------------------------------------------- */
+/* line 35, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout {
+  background-color: #FFF;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* line 41, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout,
+.mini-layout .mini-layout-body,
+.mini-layout.fluid .mini-layout-sidebar {
+  height: 300px;
+}
+
+/* line 44, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout {
+  margin-bottom: 20px;
+  padding: 9px;
+}
+
+/* line 50, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout .mini-layout-body {
+  background-color: #B3D8CF;
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* line 57, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout.fluid .mini-layout-sidebar,
+.mini-layout.fluid .mini-layout-header,
+.mini-layout.fluid .mini-layout-body {
+  float: left;
+}
+
+/* line 60, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout.fluid .mini-layout-sidebar {
+  background-color: #90c7ba;
+  width: 20%;
+}
+
+/* line 64, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.mini-layout.fluid .mini-layout-body {
+  width: 77.5%;
+  margin-left: 2.5%;
+}
+
+/* Chevrons */
+/* line 70, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+
+/* line 76, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+
+/* line 79, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav.affix {
+  top: 70px;
+}
+
+/* line 82, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+/* Bootstrap code examples
+-------------------------------------------------- */
+/* Base class */
+/* line 92, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example {
+  position: relative;
+  padding: 50px;
+  *padding-top: 30px;
+  background: transparent url(/assets/theme_venera/stripped-bg.png) left top repeat;
+  -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
+  border: 1px solid #a1a496;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  margin-bottom: 10px;
+}
+
+/* Echo out a label for the example */
+/* line 105, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example:after {
+  content: "Example";
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 3px 7px;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: #B3D8CF;
+  border: 1px solid #96c4b9;
+  color: #fff;
+}
+
+/* Tweak examples
+------------------------- */
+/* line 122, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example > p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 131, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example .table,
+.bs-docs-example .progress,
+.bs-docs-example .well,
+.bs-docs-example .alert,
+.bs-docs-example .hero-unit,
+.bs-docs-example .navbar,
+.bs-docs-example blockquote {
+  margin-bottom: 5px;
+}
+
+/* line 135, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-navbar-top-example,
+.bs-navbar-bottom-example {
+  z-index: 1;
+  padding: 0;
+  height: 90px;
+  overflow: hidden;
+  /* cut the drop shadows off */
+}
+
+/* line 142, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-navbar-top-example .navbar-fixed-top,
+.bs-navbar-bottom-example .navbar-fixed-bottom {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 146, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-navbar-top-example:after {
+  top: auto;
+  bottom: -1px;
+}
+
+/* line 150, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-navbar-bottom-example .navbar {
+  margin-bottom: 0;
+}
+
+/* line 153, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+form.bs-docs-example {
+  padding-bottom: 19px;
+}
+
+/* Images */
+/* line 158, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example-images img {
+  margin: 10px;
+  display: inline-block;
+}
+
+/* Tooltips */
+/* line 164, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-tooltip-examples {
+  text-align: center;
+  margin: 0 0 10px;
+  list-style: none;
+}
+
+/* line 169, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-tooltip-examples li {
+  display: inline;
+  padding: 0 10px;
+}
+
+/* Popovers */
+/* line 175, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example-popover {
+  padding-bottom: 24px;
+}
+
+/* line 178, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-example-popover .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 20px;
+}
+
+/* line 186, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav {
+  background-color: #FFF;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px 15px;
+  width: 180px;
+  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 193, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav li a {
+  padding: 7px 15px;
+  text-shadow: none;
+  font-size: 18px;
+}
+/* line 198, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav li a:hover {
+  background-color: #7accc9;
+  color: #fff;
+  text-shadow: none;
+}
+/* line 204, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav li.active a {
+  background-color: #7accc9;
+  color: #fff;
+  text-shadow: none;
+}
+/* line 209, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.bs-docs-sidenav li:last-child a {
+  border-bottom: none;
+}
+
+/* line 214, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.jumbotron {
+  padding: 20px 0px 0px 0px;
+  background: #f2f4ec;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #b9bdad;
+}
+/* line 221, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.jumbotron .container {
+  background: transparent url(/assets/docs-help-icon.png) right top no-repeat;
+  background-size: 200px;
+  padding-bottom: 20px;
+}
+/* line 227, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.jumbotron .docs-header-icon {
+  background-size: 65px;
+}
+/* line 230, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.jumbotron.subhead {
+  margin-bottom: 0px;
+}
+
+/* line 235, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.sub-jumbotron {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #b9bdad;
+}
+/* line 240, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.sub-jumbotron ul {
+  list-style: none;
+  margin: 0px;
+  line-height: 20px;
+  font-size: 18px;
+}
+/* line 245, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.sub-jumbotron ul li {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  margin-right: 15px;
+}
+/* line 7, ../../../../../../.rvm/gems/ruby-1.9.3-p286/gems/compass-0.12.rc.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.sub-jumbotron ul li {
+  *display: inline;
+}
+/* line 248, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.sub-jumbotron ul li a {
+  color: #3d3a31;
+  background-color: #f5f6f0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: block;
+  -webkit-box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+/* line 256, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.sub-jumbotron ul li a:hover, .sub-jumbotron ul li a.active {
+  -webkit-box-shadow: -2px -2px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -2px -2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: -2px -2px 0px rgba(0, 0, 0, 0.15);
+  background-color: #f9faf7;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  /* line 270, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .sub-jumbotron ul li {
+    display: block;
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 280, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .description-for-icons {
+    font-size: 12px;
+  }
+}
+/* line 285, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.page-header {
+  border-bottom: 3px solid #dadcd2;
+}
+
+/* Responsive
+-------------------------------------------------- */
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+  /* line 296, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-container {
+    max-width: 970px;
+  }
+
+  /* line 299, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav {
+    width: 200px;
+  }
+
+  /* line 302, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav > li > a {
+    width: 190px \9;
+    /* Override the previous IE8-9 hack */
+  }
+}
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+  /* When affixed, space properly */
+  /* line 312, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav {
+    top: 0;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 980px) {
+  /* Remove any padding from the body */
+  /* line 323, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  body {
+    padding-top: 0;
+  }
+
+  /* Widen masthead and social buttons to fill body padding */
+  /* Adjust sidenav width */
+  /* line 330, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav {
+    width: 130px;
+    margin-top: 20px;
+  }
+
+  /* line 334, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav.affix {
+    top: 0;
+  }
+}
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+  /* Remove any padding from the body */
+  /* line 345, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  body {
+    padding-top: 0;
+  }
+
+  /* Widen masthead and social buttons to fill body padding */
+  /* line 350, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .jumbotron {
+    padding: 40px 20px;
+  }
+
+  /* line 353, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .masthead h1 {
+    font-size: 90px;
+  }
+
+  /* line 357, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .masthead p,
+  .masthead .btn {
+    font-size: 24px;
+  }
+
+  /* line 360, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .marketing .span4 {
+    margin-bottom: 40px;
+  }
+
+  /* line 363, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-social {
+    margin: 0 -20px;
+  }
+
+  /* Space out the show-grid examples */
+  /* line 368, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .show-grid [class*="span"] {
+    margin-bottom: 5px;
+  }
+
+  /* Sidenav */
+  /* line 373, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav {
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  /* line 377, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .bs-docs-sidenav.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+
+  /* Unfloat the back to top link in footer */
+  /* line 384, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* line 390, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .footer p {
+    margin-bottom: 9px;
+  }
+}
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+  /* Remove padding above jumbotron */
+  /* line 399, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  body {
+    padding-top: 0;
+  }
+
+  /* Change up some type stuff */
+  /* line 404, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  h2 small {
+    display: block;
+  }
+
+  /* Downsize the jumbotrons */
+  /* line 409, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .jumbotron h1 {
+    font-size: 45px;
+  }
+
+  /* line 413, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .jumbotron p,
+  .jumbotron .btn {
+    font-size: 18px;
+  }
+
+  /* line 416, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .jumbotron .btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* center align subhead text like the masthead */
+  /* line 423, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .subhead h1,
+  .subhead p {
+    text-align: center;
+  }
+
+  /* Marketing on home */
+  /* line 428, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .marketing h1 {
+    font-size: 30px;
+  }
+
+  /* line 431, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .marketing-byline {
+    font-size: 18px;
+  }
+
+  /* center example sites */
+  /* line 436, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .example-sites {
+    margin-left: 0;
+  }
+
+  /* line 439, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .example-sites > li {
+    float: none;
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 18px;
+    text-align: center;
+  }
+
+  /* line 446, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .example-sites .thumbnail > img {
+    max-width: 270px;
+  }
+
+  /* Do our best to make tables work in narrow viewports */
+  /* line 451, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  table code {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  /* Modal example */
+  /* line 458, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .modal-example .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* Tighten up footer */
+  /* line 467, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Unfloat the back to top in footer to prevent odd text wrapping */
+  /* line 472, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+  .footer .pull-right {
+    float: none;
+  }
+}
+/* Responsive tests
+------------------------- */
+/* line 479, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.responsive-utilities-test {
+  margin-top: 5px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
+  /* clear floats */
+}
+
+/* line 485, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.responsive-utilities-test li {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 43px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 43px;
+  color: #999;
+  text-align: center;
+  background-color: #FFF;
+}
+
+/* line 497, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.responsive-utilities-test li + li {
+  margin-left: 10px;
+}
+
+/* line 500, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.responsive-utilities-test span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+/* line 507, ../../../app/assets/stylesheets/theme_venera/docs.css.scss */
+.responsive-utilities-test span {
+  color: #fff;
+  background-color: #abc18b;
+}

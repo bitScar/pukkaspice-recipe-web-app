@@ -1,0 +1,23 @@
+Deployment 2016.1
+
+First Deployment
+
+- Deployment not working for ages but this was because web had an out of date server jar ** Make sure build order is correct next time ***
+- Gmail not working so set-up account with Mailgun
+
+- "rhc port-forward pukkaspice" to start using db from pc
+
+- Can tail log with "rhc tail -a pukkaspice"
+- Build server, web
+- Copy war
+- Paste to webapps folder
+- Delete old war 
+- * Rename war to ROOT.was
+- * Open GIT Bash (this only one that works properly)
+- git add ROOT.was
+- git commit -m "[message here]"
+- git push
+
+** Don't forget to change back profile attibute values if you change from PROD
+
+

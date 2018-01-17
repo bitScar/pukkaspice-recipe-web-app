@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc
+http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<description>The file is dedicated to JDBC datasource configuration.</description>
+
+	<beans profile="DATABASE_PROD">
+		<!-- Database connection properties -->
+		<context:property-placeholder location="*/**/jdbc-prod.properties" />
+
+		<!-- Configures a DataSource with database connection properties -->
+		<bean id="dataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName">
+				<value>${jdbc.driverClassName}</value>
+			</property>
+			<property name="url">
+				<value>jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:${OPENSHIFT_MYSQL_DB_PORT}/${OPENSHIFT_APP_NAME}</value>
+			</property>
+			<property name="username">
+				<value>${OPENSHIFT_MYSQL_DB_USERNAME}</value>
+			</property>
+			<property name="password">
+				<value>${OPENSHIFT_MYSQL_DB_PASSWORD}</value>
+			</property>
+		</bean>
+	</beans>
+
+	<beans profile="DATABASE_DEV">
+		<!-- Database connection properties -->
+		<context:property-placeholder location="*/**/jdbc-dev.properties" />
+
+		<!-- Configures a DataSource with database connection properties -->
+		<bean id="dataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName">
+				<value>${jdbc.driverClassName}</value>
+			</property>
+			<property name="url">
+				<value>${jdbc.url}</value>
+			</property>
+			<property name="username">
+				<value>${jdbc.username}</value>
+			</property>
+			<property name="password">
+				<value>${jdbc.password}</value>
+			</property>
+		</bean>
+	</beans>
+
+	<!-- MyBatis Config -->
+	<beans>
+		<bean id="datasourceTransactionManager"
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource" />
+		</bean>
+
+		<!-- Define the SqlSessionFactory -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource" />
+			<property name="configLocation"
+				value="classpath:/com/pukkaspice/web/dao/mybatis/mybatis-config.xml" />
+		</bean>
+
+		<!-- Scan for mappers and let them be autowired -->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="com.pukkaspice.web.dao.mybatis" />
+		</bean>
+	</beans>
+
+</beans>

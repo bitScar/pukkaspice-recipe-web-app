@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <ingredient ingredientId="1" recipeId="1" quantity="150.0" measurement="GRAMS" description="Self-raising flour"/>
+  <ingredient ingredientId="2" recipeId="1" quantity="50.0" measurement="MILLILITER" description="Full fat natural yogart"/>
+  <ingredient ingredientId="3" recipeId="1" quantity="50.0" measurement="GRAMS" description="White sugar"/>
+  <ingredient ingredientId="4" recipeId="1" quantity="65.0" measurement="MILLILITER" description="Full fat milk"/>
+  <ingredient ingredientId="5" recipeId="1" quantity="25.0" measurement="GRAMS" description="Butter"/>
+  <ingredient ingredientId="6" recipeId="1" quantity="1.0" measurement="TEASPOONS" description="Nigella seeds"/>
+  <ingredient ingredientId="7" recipeId="1" quantity="1.0" measurement="TEASPOONS" description="Ajowan seeds"/>
+  <ingredient ingredientId="8" recipeId="1" quantity="1.0" measurement="TEASPOONS" description="Salt"/>
+  <ingredient ingredientId="9" recipeId="1" quantity="7.0" measurement="GRAMS" description="Dried yeast"/>
+  <ingredient ingredientId="10" recipeId="2" quantity="310.0" measurement="GRAMS" description="Besan (Gram) Flour"/>
+  <ingredient ingredientId="11" recipeId="2" quantity="0.5" measurement="GRAMS" description="Bicarbonate of Soda"/>
+  <ingredient ingredientId="12" recipeId="2" quantity="0.5" measurement="TEASPOONS" description="Jeera (Cumin) Seeds"/>
+  <ingredient ingredientId="13" recipeId="2" quantity="0.5" measurement="TEASPOONS" description="Ajawan (Carom) Seeds"/>
+  <ingredient ingredientId="14" recipeId="2" quantity="0.5" measurement="TEASPOONS" description="Chilli Powder"/>
+  <ingredient ingredientId="15" recipeId="2" quantity="0.25" measurement="TEASPOONS" description="Salt"/>
+  <ingredient ingredientId="16" recipeId="2" quantity="250.0" measurement="MILLILITER" description="Water"/>
+  <ingredient ingredientId="17" recipeId="2" quantity="370.0" measurement="GRAMS" description="Choped Red or White Onion"/>
+  <ingredient ingredientId="18" recipeId="2" quantity="1.0" measurement="LITER" description="Oil for frying"/>
+  <instruction instructionId="1" recipeId="1" description="Heat milk until tepid, add the sugar and yeast."/>
+  <instruction instructionId="2" recipeId="1" description="Leave for 15 minutes until frothy."/>
+  <instruction instructionId="3" recipeId="1" description="Mix all of the ingredients together to make a dough and knead for 5 minutes."/>
+  <instruction instructionId="4" recipeId="1" description="Cover and leave for 1.5 - 2 hours until risen."/>
+  <instruction instructionId="5" recipeId="1" description="Divide into four and roll out into naan shape, and leave to rest for 5 minutes."/>
+  <instruction instructionId="6" recipeId="1" description="Cook in a dry, medium to hot frying pan on each side until done."/>
+  <instruction instructionId="7" recipeId="1" description="Brush with some butter when finished."/>
+  <passwordresetwindow/>
+  <recipe recipeId="1" userId="1" name="Naan Bread" datePublished="2016-06-18" publish="true" recipeState="PUBLISHED" description="This is a nice easy bread recipe. All it takes is a little time and patience, but it is well worth the effort. The resting times are important for this recipe so don&apos;t rush it. In the end you should have a nice light fluffy naan." category="BREADS" imageName="mpVN857R.png" imageLocation="DYNAMIC" alternativeIdeas="You can really flavor this bread with whatever you like. Sometime I change the nigella and ajowan seeds for crushed garlic and fresh coriander (cilantro). Don&apos;t worry too much about the shape of the naan if you can&apos;t get it tear shaped." prepTime="120" cookTime="15" totalTime="0" recipeYield="4 Small Naan" reviewCount="0" ratingValue="0.0"/>
+  <recipe recipeId="2" userId="1" name="Traditional Onion Pakora" publish="false" recipeState="UNPUBLISHED" description="This is a fantastic base recipe for Pakora and very authentic. Once you try it you will be hooked on making your own." category="STARTER" imageName="" imageLocation="DYNAMIC" alternativeIdeas="" prepTime="15" cookTime="30" totalTime="0" recipeYield="22 Pakora" reviewCount="0" ratingValue="0.0"/>
+  <user userId="1" forename="Christopher" surname="Hatton" profileDescription="Spice lover, cook, and founder of Pukka Spice." imageName="HRDJMx7d.png" imageLocation="DYNAMIC" emailAddress="chris@codecrocodile.com" password="6b7aec24f21a316c6f8a4d895aa87bd52de28bd1" registrationDate="2016-06-18"/>
+  <useremailverification/>
+  <userroles userId="1" role="ROLE_ADMIN"/>
+  <userroles userId="1" role="ROLE_MEMBER"/>
+</dataset>

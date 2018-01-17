@@ -1,0 +1,42 @@
+
+<h3 class='section-header'>My Recipes</h3>
+<ul class='nav nav-tabs' id='myTab'>
+	<li class='active'><a href="#tab1" data-toggle="tab">Starters</a></li>
+	<li><a href="#tab2" data-toggle="tab">Main Meals</a></li>
+	<li><a href="#tab3" data-toggle="tab">Deserts</a></li>
+	<li><a href="#tab4" data-toggle="tab">Breads</a></li>
+	<li><a href="#tab5" data-toggle="tab">Sauces</a></li>
+	<li><a href="#tab6" data-toggle="tab">Other</a></li>
+</ul>
+<div class='tab-content'>
+	<div class='tab-pane active' id='tab1'>
+		<div class="recipeGrid" ui-grid="gridOptionsStarters" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsStarters.data.length">No Recipes Added</div>
+		</div>
+	</div>
+	<div class='tab-pane' id='tab2'>
+		<div class="recipeGrid" ui-grid="gridOptionsMainMeals" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsMainMeals.data.length">No Recipes Added</div>
+		</div>
+	</div>
+	<div class='tab-pane' id='tab3'>
+		<div class="recipeGrid" ui-grid="gridOptionsDeserts" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsDeserts.data.length">No Recipes Added</div>
+		</div>
+	</div>
+	<div class='tab-pane' id='tab4'>
+		<div class="recipeGrid" ui-grid="gridOptionsBreads" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsBreads.data.length">No Recipes Added</div>
+		</div>
+	</div>
+	<div class='tab-pane' id='tab5'>
+		<div class="recipeGrid" ui-grid="gridOptionsSauces" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsSauces.data.length">No Recipes Added</div>
+		</div>
+	</div>
+	<div class='tab-pane' id='tab6'>
+		<div class="recipeGrid" ui-grid="gridOptionsOther" ui-grid-auto-resize>
+			<div class="watermark" ng-show="!gridOptionsOther.data.length">No Recipes Added</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,643 @@
+/* Accont control links on top right corder, next to top navigation */
+/* line 16, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.top-account-control > a.top-sign-in {
+  background-color: #fff;
+  color: #005f6b;
+}
+/* line 20, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.top-account-control > a.top-create-account {
+  background-color: #5DC4DC;
+  color: #fff;
+}
+/* line 24, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.top-account-control > a:hover {
+  background-color: #fff;
+  color: #fff;
+}
+
+/* Slider main header styles */
+/* line 32, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-header {
+  color: #fff;
+  text-shadow: 2px 2px 0px #111;
+  border-bottom: 2px solid #282b2b;
+  -webkit-box-shadow: 0px 2px 0px #404545;
+  -moz-box-shadow: 0px 2px 0px #404545;
+  box-shadow: 0px 2px 0px #404545;
+}
+/* line 37, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-header strong {
+  color: #fff;
+}
+
+/* Slider sub header styles */
+/* line 42, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-sub-header {
+  color: #aaa;
+}
+
+/* Slider styles */
+/* line 47, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-w {
+  background: #343838 url(/assets/theme_venera/slider-noise-black-bg.jpg) top left repeat;
+  /* Call to Action button */
+}
+/* line 52, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-w .cta a {
+  -webkit-box-shadow: 0px 0px 6px 1px #111111, 0px 2px 3px 1px white inset;
+  -moz-box-shadow: 0px 0px 6px 1px #111111, 0px 2px 3px 1px white inset;
+  box-shadow: 0px 0px 6px 1px #111111, 0px 2px 3px 1px white inset;
+  border: 1px solid #000;
+}
+/* line 56, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.slider-w .cta a.btn-danger, .slider-w .cta a.btn-warning, .slider-w .cta a.btn-info {
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Area under slider - with icons, can be used for description of features */
+/* line 63, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-slider-features {
+  border-top: none;
+  border-bottom: 3px solid #2b97b0;
+  background-color: #30a9c5;
+  -webkit-box-shadow: 0px -10px 2px 0px rgba(0, 0, 0, 0.2), inset 0px 3px 0px 0px #3eb5d0;
+  -moz-box-shadow: 0px -10px 2px 0px rgba(0, 0, 0, 0.2), inset 0px 3px 0px 0px #3eb5d0;
+  box-shadow: 0px -10px 2px 0px rgba(0, 0, 0, 0.2), inset 0px 3px 0px 0px #3eb5d0;
+}
+/* line 69, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-slider-features .info-bullet {
+  text-align: center;
+  /* Icon with font awesome */
+  /* Header of the feature */
+  /* Feature description */
+}
+/* line 72, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-slider-features .info-bullet > i {
+  color: #fff;
+  text-shadow: 4px 4px 0px #2b97b0;
+}
+/* line 77, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-slider-features .info-bullet h5 {
+  color: #fff;
+  text-shadow: 2px 2px 0px #2b97b0;
+  border-bottom: 3px solid #3eb5d0;
+}
+/* line 83, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-slider-features .info-bullet p {
+  color: #fff;
+}
+
+/* line 89, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.just-stripped {
+  background: transparent url(/assets/theme_venera/stripped-bg-blue.png) left top repeat;
+}
+
+/* Can be used to separte sections of the website */
+/* line 93, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.section-wrapper {
+  /* Add a stripped background to a section */
+}
+/* line 95, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.section-wrapper.stripped {
+  background: transparent url(/assets/theme_venera/stripped-bg-blue.png) left top repeat;
+}
+/* line 98, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.section-wrapper .section-header {
+  border-bottom: 3px solid #daeef8;
+  -webkit-box-shadow: 0px 1px 0px #abd9ee;
+  -moz-box-shadow: 0px 1px 0px #abd9ee;
+  box-shadow: 0px 1px 0px #abd9ee;
+  color: #005f6b;
+}
+
+/* White shadowed block */
+/* line 107, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 1px 4px 0px #9dc2dc, 2px 2px 1px 0px white inset;
+  -moz-box-shadow: 0px 1px 4px 0px #9dc2dc, 2px 2px 1px 0px white inset;
+  box-shadow: 0px 1px 4px 0px #9dc2dc, 2px 2px 1px 0px white inset;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9fcfe), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(#f9fcfe, #ffffff);
+  background-image: -moz-linear-gradient(#f9fcfe, #ffffff);
+  background-image: -o-linear-gradient(#f9fcfe, #ffffff);
+  background-image: -ms-linear-gradient(#f9fcfe, #ffffff);
+  background-image: linear-gradient(#f9fcfe, #ffffff);
+}
+/* line 112, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card.just-white {
+  background: #fff;
+}
+/* line 115, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card .img-w {
+  -webkit-box-shadow: 0px 0px 3px 3px white;
+  -moz-box-shadow: 0px 0px 3px 3px white;
+  box-shadow: 0px 0px 3px 3px white;
+}
+/* line 119, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card .img-w.hover-fader .hover-fade {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* line 122, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card .img-w.hover-fader i {
+  color: #fff;
+}
+/* line 128, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card h5 {
+  color: #005f6b;
+  border-bottom: 1px solid #bbd9ee;
+  -webkit-box-shadow: 0px 1px 0px white;
+  -moz-box-shadow: 0px 1px 0px white;
+  box-shadow: 0px 1px 0px white;
+  text-shadow: -1px -1px white;
+}
+/* line 135, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.white-card p {
+  color: #005f6b;
+}
+
+/* Testimonials styles */
+/* line 142, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials {
+  /* Client with testimonial */
+  /* Text of testimonial */
+}
+/* line 144, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-user {
+  -webkit-box-shadow: -3px -3px 0px 0px #a1c8e4;
+  -moz-box-shadow: -3px -3px 0px 0px #a1c8e4;
+  box-shadow: -3px -3px 0px 0px #a1c8e4;
+  border: 5px solid #fff;
+}
+/* line 148, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-user-w {
+  /* Add a pointer from user avatar to the testimonial text */
+}
+/* line 149, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-user-w.active .testimonials-user, .testimonials .testimonials-user-w:hover .testimonials-user {
+  -webkit-box-shadow: 3px 3px 0px 0px #a1c8e4;
+  -moz-box-shadow: 3px 3px 0px 0px #a1c8e4;
+  box-shadow: 3px 3px 0px 0px #a1c8e4;
+}
+/* line 153, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-user-w.active:before {
+  border-bottom-color: #fff;
+}
+/* line 158, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-speech {
+  background: white url(/assets/theme_venera/quotes.png) 15px 20px no-repeat;
+  -webkit-box-shadow: 0px 1px 4px 1px #bbd9ee;
+  -moz-box-shadow: 0px 1px 4px 1px #bbd9ee;
+  box-shadow: 0px 1px 4px 1px #bbd9ee;
+}
+/* line 162, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.testimonials .testimonials-speech p {
+  border-bottom: 1px solid #bbd9ee;
+  color: #005f6b;
+}
+
+/* Area over the footer */
+/* line 171, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer {
+  background: #008C9E;
+  border-top: 10px solid #007585;
+  /* Footer logo styles */
+  /* Company Address information */
+  /* Header of a section in footer */
+  /* List of items in footer has to have custom styles */
+}
+/* line 175, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .thumbnail {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #fff;
+}
+/* line 181, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .footer-logo a {
+  color: #c4c7be;
+  border-bottom: 5px solid #007585;
+}
+/* line 185, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .footer-logo strong {
+  color: #fff;
+}
+/* line 191, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer ul.footer-address li {
+  color: #fff;
+}
+/* line 193, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer ul.footer-address li strong {
+  color: #c9d3cd;
+}
+/* line 199, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .footer-header {
+  border-bottom: 5px solid #007585;
+  color: #fff;
+}
+/* line 204, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .footer-list {
+  color: #fff;
+}
+/* line 207, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.pre-footer .footer-list li a {
+  color: #fff;
+}
+
+/* Deep footer */
+/* line 214, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.deep-footer {
+  background-color: #005f6b;
+  border-top: 2px solid #004852;
+  /* Copyright information */
+  /* Footer links */
+}
+/* line 218, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.deep-footer .copyright {
+  color: #fff;
+}
+/* line 224, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.deep-footer .footer-links li a {
+  color: #fff;
+}
+
+/* Styling of font awesome showcase */
+/* line 234, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+#all-icons ul li {
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 0px 6px 2px #c0e3f2;
+  -moz-box-shadow: 0px 0px 6px 2px #c0e3f2;
+  box-shadow: 0px 0px 6px 2px #c0e3f2;
+}
+/* line 238, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+#all-icons ul li .holder-for-icons {
+  border-bottom: 1px solid #96d0ea;
+}
+/* line 240, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+#all-icons ul li .holder-for-icons i {
+  color: #343838;
+}
+/* line 244, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+#all-icons ul li .description-for-icons {
+  background-color: white;
+  -webkit-box-shadow: inset 0px 2px 1px 0px #d6ecf7;
+  -moz-box-shadow: inset 0px 2px 1px 0px #d6ecf7;
+  box-shadow: inset 0px 2px 1px 0px #d6ecf7;
+}
+
+/* Recent posts styles */
+/* line 256, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .recent-post-header {
+  border-bottom: 1px solid #a4cbe6;
+  -webkit-box-shadow: 0px 1px 0px 0px white;
+  -moz-box-shadow: 0px 1px 0px 0px white;
+  box-shadow: 0px 1px 0px 0px white;
+}
+/* line 259, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .recent-post-header a {
+  color: #005f6b;
+}
+/* line 263, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-info {
+  color: #005f6b;
+}
+/* line 266, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-date {
+  border-right: 1px solid #005f6b;
+}
+/* line 269, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-comments {
+  color: #005f6b;
+}
+/* line 272, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-like {
+  background: #cae5f6;
+  color: #0e476e;
+  border: 1px solid #a6cfe9;
+  -webkit-box-shadow: inset 1px 1px 1px 0px white;
+  -moz-box-shadow: inset 1px 1px 1px 0px white;
+  box-shadow: inset 1px 1px 1px 0px white;
+}
+/* line 277, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-like i {
+  color: #a6cfe9;
+  text-shadow: 1px 1px 0px #dbebf5, -1px -1px 0px #a6cfe9;
+}
+/* line 281, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-like:hover {
+  background-color: #e08066;
+  color: #fff;
+  border-color: #d27156;
+  -webkit-box-shadow: inset 1px 1px 1px 0px #efa08b;
+  -moz-box-shadow: inset 1px 1px 1px 0px #efa08b;
+  box-shadow: inset 1px 1px 1px 0px #efa08b;
+}
+/* line 286, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-like:hover i {
+  color: #fff;
+  text-shadow: 1px 1px 0px #9a4d38;
+}
+/* line 292, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .post-image {
+  -webkit-box-shadow: 0px 0px 2px 2px white;
+  -moz-box-shadow: 0px 0px 2px 2px white;
+  box-shadow: 0px 0px 2px 2px white;
+}
+/* line 297, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.recent-post .separated {
+  border-bottom: 1px solid #dfe1d6;
+  -webkit-box-shadow: 0px 1px 0px 0px white;
+  -moz-box-shadow: 0px 1px 0px 0px white;
+  box-shadow: 0px 1px 0px 0px white;
+}
+
+/* Docs */
+/* line 306, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.show-grid [class*="span"] {
+  background-color: #5DC4DC;
+}
+
+/* line 309, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.show-grid:hover [class*="span"] {
+  background: #fff;
+}
+
+/* line 314, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.show-grid .show-grid [class*="span"] {
+  background-color: #1B8CA6;
+}
+
+/* Mini layout previews
+-------------------------------------------------- */
+/* line 319, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.mini-layout {
+  background-color: #FFF;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* line 323, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.mini-layout .mini-layout-body {
+  background-color: #5DC4DC;
+}
+
+/* line 326, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.mini-layout.fluid .mini-layout-sidebar {
+  background-color: #1B8CA6;
+}
+
+/* line 329, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-sidenav > li > a:hover {
+  background-color: #fff;
+}
+
+/* Venera code examples
+-------------------------------------------------- */
+/* line 336, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.page-header {
+  border-bottom: 3px solid #b5daef;
+}
+
+/* Base class */
+/* line 341, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-example {
+  background: transparent url(/assets/theme_venera/stripped-bg-blue.png) left top repeat;
+  -webkit-box-shadow: 2px 2px 4px 0px #b5daef inset;
+  -moz-box-shadow: 2px 2px 4px 0px #b5daef inset;
+  box-shadow: 2px 2px 4px 0px #b5daef inset;
+  border: 1px solid #98cae6;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+/* Echo out a label for the example */
+/* line 350, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-example:after {
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
+  background-color: #5DC4DC;
+  border: 1px solid #30A9C5;
+  color: #fff;
+}
+
+/* line 358, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-sidenav {
+  background-color: #FFF;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+}
+/* line 363, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-sidenav li a:hover {
+  background-color: #5DC4DC;
+  color: #fff;
+}
+/* line 368, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.bs-docs-sidenav li.active a {
+  background-color: #5DC4DC;
+  color: #fff;
+}
+
+/* line 374, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.jumbotron {
+  background: #fff;
+  border-bottom: 1px dashed #9ad1f0;
+}
+/* line 378, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.jumbotron .container {
+  background: transparent url(/assets/docs-help-icon.png) right top no-repeat;
+}
+
+/* line 383, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-jumbotron {
+  border-bottom: 1px dashed #9ad1f0;
+}
+/* line 387, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-jumbotron ul li a {
+  color: #005f6b;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 0px #a4cee6;
+  -moz-box-shadow: 2px 2px 0px #a4cee6;
+  box-shadow: 2px 2px 0px #a4cee6;
+}
+/* line 391, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.sub-jumbotron ul li a:hover, .sub-jumbotron ul li a.active {
+  -webkit-box-shadow: 2px 2px 0px #89bfde inset;
+  -moz-box-shadow: 2px 2px 0px #89bfde inset;
+  box-shadow: 2px 2px 0px #89bfde inset;
+  background-color: #b3d8ed;
+}
+
+/* Responsive tests
+------------------------- */
+/* line 403, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.responsive-utilities-test li {
+  color: #999;
+  background-color: #FFF;
+}
+
+/* line 407, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.responsive-utilities-test span {
+  color: #fff;
+  background-color: #5ca61b;
+}
+
+/* Single blog post */
+/* line 414, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.single-post-w {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 1px 4px 1px #abd9ee;
+  -moz-box-shadow: 0px 1px 4px 1px #abd9ee;
+  box-shadow: 0px 1px 4px 1px #abd9ee;
+}
+
+/* Side search widget for blog */
+/* line 421, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-search .search-input {
+  border: 2px solid #c0e3f2;
+  color: #6cbde1;
+  background-color: #ebf6fb;
+}
+
+/* Side tags for blog */
+/* line 433, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-tags .side-tag {
+  background-color: #c14957;
+  color: #fff;
+  text-shadow: -1px -1px 0px #a03743;
+  -webkit-box-shadow: 2px 2px 0px #a03743;
+  -moz-box-shadow: 2px 2px 0px #a03743;
+  box-shadow: 2px 2px 0px #a03743;
+}
+/* line 438, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-tags .side-tag:hover {
+  background-color: #d36270;
+}
+/* line 440, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-tags .side-tag:hover:before {
+  border-color: transparent #d36270 transparent transparent;
+}
+/* line 444, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-tags .side-tag:before {
+  border-color: transparent #c14957 transparent transparent;
+}
+/* line 447, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-side-tags .side-tag:after {
+  -webkit-box-shadow: -2px -2px 0px #a03743;
+  -moz-box-shadow: -2px -2px 0px #a03743;
+  box-shadow: -2px -2px 0px #a03743;
+  background: #ebf6fb;
+}
+
+/* Side categories for blog */
+/* line 458, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-categories ul li a {
+  background-color: #f8fcfe;
+  -webkit-box-shadow: 1px 1px 2px #c0e3f2;
+  -moz-box-shadow: 1px 1px 2px #c0e3f2;
+  box-shadow: 1px 1px 2px #c0e3f2;
+  border-left: 5px solid #fff;
+  color: #005f6b;
+}
+/* line 464, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-categories ul li a:hover {
+  background-color: #FFF;
+  border-left: 15px solid #C14957;
+}
+
+/* Recent tweets section for blog */
+/* line 476, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.blog-recent-tweets ul li {
+  background-color: #FFF;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.07);
+}
+
+/* Widget with filled background style */
+/* line 484, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.widget-filled {
+  background-color: #FFF;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+}
+/* line 487, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.widget-filled h3 {
+  border-bottom: 1px dashed #c0e3f2;
+  color: #807e6a;
+}
+/* line 492, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.widget-filled.widget-yellow {
+  background-color: #fffde3;
+}
+
+/* Widget with transparent background */
+/* line 498, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.widget-tp h3 {
+  border-bottom: 1px solid #c0e3f2;
+  color: #005f6b;
+}
+/* line 501, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.widget-tp h3 i {
+  color: #008c9e;
+}
+
+/* Post author formatting */
+/* line 509, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-author-w .post-author-photo {
+  -webkit-box-shadow: 3px 3px 0px 0px #ced0c6;
+  -moz-box-shadow: 3px 3px 0px 0px #ced0c6;
+  box-shadow: 3px 3px 0px 0px #ced0c6;
+  border: 5px solid #fff;
+}
+/* line 514, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-author-w .post-author-bio-w .post-author-name {
+  border-bottom: 1px dashed #c0e3f2;
+}
+
+/* Styles for transparent forms */
+/* line 521, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.form-transparent input[type="text"], .form-transparent textarea {
+  border-color: #6cbde1;
+  background-color: #fff;
+  -webkit-box-shadow: inset 1px 1px 2px 0px #ebf6fb;
+  -moz-box-shadow: inset 1px 1px 2px 0px #ebf6fb;
+  box-shadow: inset 1px 1px 2px 0px #ebf6fb;
+}
+/* line 526, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.form-transparent legend {
+  border-bottom: 1px solid #c0e3f2;
+}
+
+/* Actual post comments styles */
+/* line 532, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-comments-list li {
+  border-bottom: 1px dashed #96d0ea;
+  /* Comment author photo */
+  /* Actual comment text */
+}
+/* line 535, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-comments-list li .comment-author-photo {
+  -webkit-box-shadow: 3px 3px 0px 0px #ced0c6;
+  -moz-box-shadow: 3px 3px 0px 0px #ced0c6;
+  box-shadow: 3px 3px 0px 0px #ced0c6;
+  border: 5px solid #fff;
+}
+/* line 540, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-comments-list li .comment-content {
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 4px 1px #d6ecf7;
+  -moz-box-shadow: 1px 1px 4px 1px #d6ecf7;
+  box-shadow: 1px 1px 4px 1px #d6ecf7;
+  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Add an tip poiting to comment author */
+}
+/* line 546, ../../../app/assets/stylesheets/theme_venera/blue.css.scss */
+.post-comments-list li .comment-content:before {
+  border-color: transparent white transparent transparent;
+}

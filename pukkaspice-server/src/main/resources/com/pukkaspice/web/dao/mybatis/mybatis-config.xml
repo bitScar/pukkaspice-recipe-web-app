@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+	<typeAliases>
+		<typeAlias alias="RecipeSummary" type="com.pukkaspice.web.common.model.recipe.RecipeSummary" />
+		<typeAlias alias="Recipe" type="com.pukkaspice.web.common.model.recipe.Recipe" />
+		<typeAlias alias="Ingredient" type="com.pukkaspice.web.common.model.recipe.Ingredient" />
+		<typeAlias alias="Instruction" type="com.pukkaspice.web.common.model.recipe.Instruction" />
+		<typeAlias alias="UserSummary" type="com.pukkaspice.web.common.model.user.UserSummary" />
+		<typeAlias alias="VerificationRecord" type="com.pukkaspice.web.common.model.user.VerificationRecord" />
+		<typeAlias alias="PasswordResetWindow" type="com.pukkaspice.web.common.model.user.PasswordResetWindow" />
+	</typeAliases>
+</configuration>

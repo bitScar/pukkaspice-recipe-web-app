@@ -1,0 +1,76 @@
+/* STYLES FOR CODE EXAMPLES SECTIONS IN DOCUMENTATION */
+/* line 4, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.com {
+  color: #fff8bd;
+}
+
+/* line 5, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.lit {
+  color: #fff;
+}
+
+/* line 6, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.pun, .opn, .clo {
+  color: #fff;
+}
+
+/* line 7, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.fun {
+  color: #fff;
+}
+
+/* line 8, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.str, .atv {
+  color: #bdf6ff;
+}
+
+/* line 9, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.kwd, .prettyprint .tag {
+  color: #fff;
+}
+
+/* line 10, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.typ, .atn, .dec, .var {
+  color: #aaa;
+}
+
+/* line 11, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.pln {
+  color: #f2e1c9;
+}
+
+/* line 13, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.prettyprint {
+  padding: 10px;
+  background-color: #222;
+  border: 1px solid #000;
+}
+
+/* line 18, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #444444;
+  -moz-box-shadow: inset 40px 0 0 #444444;
+  box-shadow: inset 40px 0 0 #444444;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+/* line 23, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+ol.linenums {
+  margin: 0 0 0 33px;
+  /* IE indents via margin-left */
+}
+
+/* line 26, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+ol.linenums li {
+  padding-left: 12px;
+  color: #888;
+  line-height: 18px;
+}
+
+/* line 33, ../../../app/assets/stylesheets/theme_venera/prettify.css.scss */
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  color: #fff;
+  list-style-type: decimal;
+}
+
+/* END STYLES FOR CODE EXAMPLES SECTIONS IN DOCUMENTATION */

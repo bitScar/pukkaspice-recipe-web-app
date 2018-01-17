@@ -1,0 +1,11 @@
+#creating a change log file from an existing database
+
+java -jar C:\Users\Chris\.m2\repository\org\liquibase\liquibase-core\3.4.2\liquibase-core-3.4.2.jar  --url="jdbc:mysql://localhost:3306/pukkaspice" --username=root --changeLogFile=C:\DEV\Workspaces\Workspace_Eclipse_STS_3.5.1\com.pukkaspice.web.parent\com.pukkuspice.data\src\main\resources\com\pukkaspice\data\schema\changelog.xml --driver=com.mysql.jdbc.Driver  --classpath=C:\Users\Chris\.m2\repository\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar generateChangeLog 
+
+
+      
+      
+      
+      
+      
+     

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PukkaSpice - Confirm Email</title>
+<style>
+	.center {
+		margin: auto;
+		width: 400px;
+	}
+	.email-link {
+		color: #555;
+		font-weight: lighter;
+		font-style: italic;
+	}
+	h1 {
+		text-align: center;
+	}
+	a {
+		color: blue;
+	}
+}
+</style>
+</head>
+
+<body>
+	<h1>PukkaSpice</h1>
+	
+	<div class="center">
+		<p>Hello spice lover, and welcome to PukkaSpice. We are so excited that you decided to be part of this spice and cooking community.</p>
+		<p>Please click the link below to confirm your email:</p>
+		<p><a href="${url}">Confirm Email Address</a></p>
+		<p>If for some reason the above link isn't working, please paste the following into your web browser address bar:</p>
+		<p class="email-link">${url}</p>
+		<p>Have a good day, and why not try adding adding a recipe or two when you get time.</p>
+	</div>
+</body>
+
+</html>

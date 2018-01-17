@@ -1,0 +1,189 @@
+/* line 2, ../../vendor/assets/stylesheets/lightbox.scss */
+#lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+  display: none;
+}
+
+/* line 12, ../../vendor/assets/stylesheets/lightbox.scss */
+#lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+/* line 21, ../../vendor/assets/stylesheets/lightbox.scss */
+#lightbox img {
+  width: auto;
+  height: auto;
+}
+
+/* line 25, ../../vendor/assets/stylesheets/lightbox.scss */
+#lightbox a img {
+  border: none;
+}
+
+/* line 29, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 38, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 44, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-container {
+  padding: 10px;
+}
+
+/* line 48, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-loader {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 58, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 67, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 71, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-nav a {
+  outline: none;
+}
+
+/* line 75, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+/* line 83, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-prev {
+  left: 0;
+  float: left;
+}
+
+/* line 88, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-next {
+  right: 0;
+  float: right;
+}
+
+/* line 93, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-prev:hover {
+  background: url(/resources/assets/images/lightbox/prev.png) left 48% no-repeat;
+}
+
+/* line 97, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-next:hover {
+  background: url(/resources/assets/images/lightbox/next.png) right 48% no-repeat;
+}
+
+/* line 101, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -ms-border-bottom-left-radius: 4px;
+  -o-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -ms-border-bottom-right-radius: 4px;
+  -o-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 108, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 114, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data {
+  padding: 0 10px;
+  color: #bbbbbb;
+}
+
+/* line 118, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+/* line 124, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* line 129, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+}
+
+/* line 135, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data .lb-close {
+  width: 35px;
+  float: right;
+  padding-bottom: 0.7em;
+  outline: none;
+}
+
+/* line 141, ../../vendor/assets/stylesheets/lightbox.scss */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+}

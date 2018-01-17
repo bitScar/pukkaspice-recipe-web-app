@@ -1,0 +1,13 @@
+Problem:
+When trying to use angularjs routing the changing context path can be a problem.
+
+Solution:
+In Tomcat server.xml change
+<Context docBase="com.pukkaspice.web" path="/pukkaspice" reloadable="true" source="org.eclipse.jst.jee.server:com.pukkaspice.web"/></Host>
+to
+<Context docBase="com.pukkaspice.web" path="/" reloadable="true" source="org.eclipse.jst.jee.server:com.pukkaspice.web"/></Host>
+
+otherwise we would need to set a variable somewhere and take to context path into account in the js code
+
+****
+I think we may also have to rename the war to "root" when deploying to openshift otherwise to will use the war name as the  context root

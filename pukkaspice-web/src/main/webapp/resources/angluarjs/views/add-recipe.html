@@ -1,0 +1,161 @@
+<div class="white-card extra-padding">
+	<form novalidate name="recipeForm" class="no-margin-bottom">
+		<fieldset>
+			<div class="row">
+				<div class='span7'>
+					<legend>Add Recipe</legend>
+				</div>
+
+				<div class="span4">
+					<h5>Basic Details</h5>
+					
+					<div class='control-group' ng-class="{warning: recipeForm.recipename.$error.minlength || recipeForm.recipename.$error.maxlength}">
+						<input class="span4" name="recipename" placeholder="Input recipe name..." type="text" ng-model="recipeModel.name" ng-minlength="5" ng-maxlength="50">
+						<span ng-show="recipeForm.recipename.$error.minlength" class="help-block">Recipe name is too short</span> 
+						<span ng-show="recipeForm.recipename.$error.maxlength" class="help-block">Recipe name is too long</span>
+					</div>
+					
+					<div class="control-group" ng-class="{warning: recipeForm.recipeDescription.$error.maxlength}">
+						<textarea name="recipeDescription" class="span4" rows="3" placeholder="Input recipe description..." ng-model="recipeModel.description" ng-maxlength="500"></textarea>
+						<span ng-show="recipeForm.recipeDescription.$error.maxlength" class="help-block">Recipe description is too long</span>
+					</div>
+					
+					<div class="control-group">
+						<select name="category" class="span3" ng-model="recipeModel.category">
+							<option value="" selected disabled >Select category...</option>
+							<option value="STARTER">Starter</option>
+							<option value="MAIN">Main Meal</option>
+							<option value="DESERTS">Desert</option>
+							<option value="BREADS">Bread</option>
+							<option value="SAUCES">Sauce</option>
+							<option value="OTHER">Other</option>
+						</select> 
+					</div>
+
+					<div class="control-group" ng-class="{warning: recipeForm.prepTimeMins.$error.maxlength || recipeForm.prepTimeMins.$error.pattern}">
+						<div class="input-append">
+							<input name="prepTimeMins" class="span3" placeholder="Input preperation time..." type="text" ng-model="recipeModel.prepTime" ng-maxlength="4" ng-pattern="/^[1-9]+[0-9]*$/">
+							<span class="add-on">Mins</span>
+						</div>
+						<span ng-show="recipeForm.prepTimeMins.$error.maxlength" class="help-block">Preparation time is too long</span>
+						<span ng-show="recipeForm.prepTimeMins.$error.pattern" class="help-block">Preparation time requires a number</span>
+					</div>
+					
+					<div class="control-group" ng-class="{warning: recipeForm.cookTimeMins.$error.maxlength || recipeForm.cookTimeMins.$error.pattern}">
+						<div class="input-append">
+							<input name="cookTimeMins" class="span3" placeholder="Input cooking time..." type="text" ng-model="recipeModel.cookTime" ng-maxlength="4" ng-pattern="/^[1-9]+[0-9]*$/">
+							<span class="add-on">Mins</span>
+						</div>
+						<span ng-show="recipeForm.cookTimeMins.$error.maxlength" class="help-block">Cooking time is too long</span>
+						<span ng-show="recipeForm.cookTimeMins.$error.pattern" class="help-block">Cooking time requires a number</span>
+					</div>
+					
+					<div class="control-group" ng-class="{warning: recipeForm.recipeYield.$error.maxlength}">
+						<input name="recipeYield" class="span3" placeholder="Input finshed quantity description..." type="text" ng-model="recipeModel.recipeYield" ng-maxlength="20">
+						<span ng-show="recipeForm.recipeYield.$error.maxlength" class="help-block">Finished quantity description is too long</span>
+					</div>
+				</div>
+				
+				<!-- Recipe picture -->
+				<div class='span3'>
+					<div ng-show="!editingShow" >
+						<img ng-src="{{visibleImage}}" style="width:270px; height:270px"/>
+											
+						<div style="margin-top: 10px; margin-bottom: 15px">
+							<button class='btn btn-primary' ng-click="editPhoto()" >Edit Photo</button>
+							<div style="clear: both"></div>
+						</div>
+					</div>
+					
+					<div ng-show="editingShow">
+						<div class="cropArea">
+							<img-crop image="visibleImage" result-image="croppedRecipeImage" area-type="square" result-image-size=450 result-image-quality=1.0 chargement="'Loading'"></img-crop>
+						</div>
+						<input style="width:255px; margin-top:5px;" class="btn btn-default btn-file" type="file" id="recipePhotofileInput" />
+						<div style="margin-top:5px; margin-bottom:15px" >
+							<button class="btn btn-primary" ng-click="editPhotoOk()">Ok</button>
+							<button class="btn" ng-click="editPhotoCancel()">Cancel</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="row">
+				<div class="span7">
+					<h5>Ingredients</h5>
+
+					<div ng-form="ingredientForm" ng-repeat="item in recipeModel.ingredients">
+						<div class="control-group" ng-class="{warning: ingredientForm.ingredientDesc.$error.maxlength || ingredientForm.ingredientQuantity.$error.maxlength || ingredientForm.ingredientQuantity.$error.pattern}">
+							<div class='controls controls-row'> 
+								<input name="ingredientQuantity" class="span1" placeholder="Quantity..." type="text" ng-model="item.quantity" ng-maxlength="10" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/"> 
+								<select class="span2" placeholder="Amount..." ng-model="item.measurement" required>
+									<option value=""></option>
+									<option value="GRAMS">grams</option>
+									<option value="KILOS">kilos</option>
+									<option value="MILLILITER">ml</option>
+									<option value="LITER">liter</option>
+									<option value="TEASPOONS">tsps</option>
+									<option value="TABLESPOONS">tbls</option>
+									<option value="CUP">cup</option>
+									<option value="POUND">pound</option>
+									<option value="FLUID_OUNCE">fl oz</option>
+									<option value="QUART">qt</option>
+									<option value="GALLON">gal</option>
+									<option value="OUNCE">oz</option>
+									<option value="PINCH">pinch</option>
+									<option value="DASH">dash</option>
+								</select>
+								<input name="ingredientDesc" class="span3" placeholder="Input ingredient..." type="text" ng-model="item.description" ng-minlength="2" ng-maxlength="100">
+								<button class="btn span1" ng-click="deleteIngredient($index)">Delete</button>
+							</div>
+							<span ng-show="ingredientForm.ingredientDesc.$error.minlength" class="help-block">Ingredient description is too short</span>
+							<span ng-show="ingredientForm.ingredientDesc.$error.maxlength" class="help-block">Ingredient description is too long</span>
+							<span ng-show="ingredientForm.ingredientQuantity.$error.maxlength" class="help-block">Quantity is too long</span>
+							<span ng-show="ingredientForm.ingredientQuantity.$error.pattern" class="help-block">Quantity is an invalid number</span>
+						</div>
+					</div>
+
+					<div>
+						<button class="btn" style="float: right" ng-click="addIngredient()">Add Ingredient</button>
+						<div style="clear: both"></div>
+					</div>
+
+					<h5>Instructions</h5>
+					<div ng-form="instructionForm"  ng-repeat="item in recipeModel.recipeInstructions">
+						<div class="control-group" ng-class="{warning: instructionForm.instructionDesc.$error.minlength || instructionForm.instructionDesc.$error.maxlength}">
+							<div class='controls controls-row'>
+								<textarea name="instructionDesc" class="span6" rows="2" placeholder="Input instruction..." ng-model="item.description" ng-minlength="5" ng-maxlength="200"></textarea>
+								<button class="btn span1" ng-click="deleteInstruction($index)">Delete</button>
+							</div>
+							<span ng-show="instructionForm.instructionDesc.$error.minlength" class="help-block">Instruction description is too short</span>
+							<span ng-show="instructionForm.instructionDesc.$error.maxlength" class="help-block">Instruction description is too long</span>
+						</div>
+					</div>
+					<div>
+						<button class="btn" style="float: right; display: block;" ng-click="addInstruction()">Add Instruction</button>
+						<div style="clear: both"></div>
+					</div>
+
+					<div class="control-group" ng-class="{warning: recipeForm.alternativeIdeas.$error.maxlength}">
+						<h5>Alternative Ideas</h5>
+						<textarea name="alternativeIdeas" class="span7" rows="3" placeholder="Input optional alternative ideas for recipe..." ng-model="recipeModel.alternativeIdeas" ng-maxlength="500"></textarea>
+						<span ng-show="recipeForm.alternativeIdeas.$error.maxlength" class="help-block">Alternative ideas description is too long</span>
+					</div>
+
+					<div class="control-group">
+						<h5>Publish Recipe</h5>
+						<label class="checkbox"> <input type="checkbox" ng-model="recipeModel.publish"> Yes, publish this recipe</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-actions no-margin-bottom">
+				<button class="btn btn-primary" ng-click="saveRecipe(recipe)" ng-disabled="recipeForm.$invalid || recipeForm.$pristine">Save Recipe</button>
+				<button class="btn btn-gray"ng-click="cancelChanges()" ng-disabled="recipeForm.$pristine">Cancel</button>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
+

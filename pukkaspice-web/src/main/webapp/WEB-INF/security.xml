@@ -1,0 +1,62 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+	<!-- <security:global-method-security jsr250-annotations="enabled" pre-post-annotations="enabled" 
+		/> -->
+	<http entry-point-ref="authenticationEntryPoint"> <!-- entry point is able to check for reset calls and return 403 instead 
+			of redirect -->
+		<!-- TODO: change this to http requires-channel -->
+		<intercept-url pattern="/secure/member/**/*" access="ROLE_MEMBER" />
+		<intercept-url pattern="/rest/**/*" access="ROLE_MEMBER" />
+		<logout delete-cookies="PUKKASPICE_SESSION_ID" logout-url="/secure/logout"
+			invalidate-session="true" logout-success-url="/" />
+		<!-- always-use-default-target="true" ensures that when ajax call unauthenticated 
+			then when logging in takes you to dash board and not returns just json -->
+		<form-login login-page="/secure/login" default-target-url="/secure/member/dashboard"
+			always-use-default-target="true" username-parameter="emailAddress"
+			password-parameter="password" login-processing-url="/secure/pukka_security" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider ref="PukkaAuthenticationProvider" />
+	</authentication-manager>
+
+	<!-- entry point is able to check for reset calls and return 403 instead 
+		of redirect -->
+	<beans:bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint">
+		<!-- this is the configuration for /api/ URLs -->
+		<beans:constructor-arg>
+			<beans:map>
+				<beans:entry>
+					<beans:key>
+						<beans:bean
+							class="org.springframework.security.web.util.matcher.RegexRequestMatcher">
+							<beans:constructor-arg value="^/rest/.*" />
+							<beans:constructor-arg>
+								<beans:null />
+							</beans:constructor-arg><!-- no matter what the HTTP method is -->
+						</beans:bean>
+					</beans:key>
+					<!-- if the key above has matched, send 403 response -->
+					<beans:bean
+						class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+				</beans:entry>
+			</beans:map>
+		</beans:constructor-arg>
+
+		<!-- and in the default case just redirect to login form -->
+		<beans:property name="defaultEntryPoint">
+			<beans:bean
+				class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+				<beans:constructor-arg value="/secure/login" />
+			</beans:bean>
+		</beans:property>
+	</beans:bean>
+
+</beans:beans>

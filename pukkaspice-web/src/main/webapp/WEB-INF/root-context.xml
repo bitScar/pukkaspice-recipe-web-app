@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/aop
+         				http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- <import resource="classpath:../spring/datasource-drivermanager.xml" 
+		/> -->
+	<!-- <import resource="classpath*:datasource-drivermanager.xml" /> -->
+
+	<!-- <import resource="/WEB-INF/spring/datasource-drivermanager.xml" /> -->
+	<!-- <import resource="classpath:com/pukkaspice/web/datasource-drivermanager.xml" 
+		/> -->
+	<context:component-scan base-package="com.pukkaspice.web" />
+
+	<import resource="datasource-drivermanager.xml" />
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.mailgun.org" />
+		<property name="port" value="25" />
+		<property name="username" value="postmaster@sandboxf8a4e61297a74ce5983abc2fd986db45.mailgun.org" />
+		<property name="password" value="b1b396d26b2f008d992e2b90f727c382" />
+		<property name="javaMailProperties">
+			<props>
+ 				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+ 				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
+	</bean>
+	
+	<beans profile="IMAGE_STOREAGE_PROD">
+		<bean id="cloudinary" class="com.cloudinary.Cloudinary">
+			<constructor-arg>  
+				<map>  
+					<entry key="cloud_name"  value="pukkaspice"></entry>  
+					<entry key="api_key" value="293569785334968"></entry>  
+					<entry key="api_secret" value="l46oX7WTY_WUjaAiwhjF1RH7VYg"></entry>  
+				</map>  
+			</constructor-arg>
+		</bean>
+	</beans>
+</beans>

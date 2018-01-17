@@ -1,0 +1,50 @@
+.dl-horizontal dt {
+  float: left;
+  width: 60px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  padding: 5px 2px;
+  background-color: #FFDFA6;	
+}
+
+.dl-horizontal dt.dt-instruction  {
+  float: left;
+  width: 40px;
+  clear: left;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  padding: 5px 2px;
+  background-color: #FFDFA6;	
+}
+
+.dl-horizontal dd {
+  margin-left: 70px;
+  margin-bottom: 2px;
+}
+
+dd {
+  line-height: 20px;
+  background-color: #EBEDE3;
+  padding: 5px 2px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+.single-post-w .post-info .last-info-item  {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: none;
+  text-transform: uppercase;
+  font-size: 12px;
+}

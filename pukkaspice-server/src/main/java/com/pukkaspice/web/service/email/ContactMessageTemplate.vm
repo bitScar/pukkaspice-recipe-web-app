@@ -1,0 +1,13 @@
+<html>
+<body>
+
+<p>Hi PukkaSpice Admin, you have a message from the contact page.</p>
+<b>Name:</b>
+<p>${name}</p>
+<b>Email Address</b>
+<p><a href="mailto:${email}">${email}</a></p>
+<b>Message</b>
+<p>${message}</p>
+
+</body>
+</html>

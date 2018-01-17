@@ -1,0 +1,67 @@
+<div class='white-card extra-padding'>
+	<form novalidate name="profileForm" class='no-margin-bottom'> <!-- novalidate disables browser validation so that we can do it in angular -->
+		<fieldset>
+			<div class='row'>
+				
+				<!-- Page title -->
+				<div class='span7'>
+					<legend>Profile Information</legend>
+				</div>
+
+				<!-- Name and address -->
+				<div class='span4'>
+					<div class='control-group' ng-class="{warning: profileForm.forename.$error.minlength || profileForm.forename.$error.maxlength}">
+						<label>First Name</label> <input name="forename" class='span3' placeholder='Input first name...' type='text' ng-model="userSummary.forename" ng-minlength="2" ng-maxlength="50"> <span ng-show="profileForm.forename.$error.minlength" class="help-block">Forename is too short</span> <span ng-show="profileForm.forename.$error.maxlength" class="help-block">Forename is too long</span>
+					</div>
+					<div class='control-group' ng-class="{warning: profileForm.surname.$error.minlength || profileForm.surname.$error.maxlength}">
+						<label>Last Name</label> <input name="surname" class='span3' placeholder='Input last name...' type='text' ng-model="userSummary.surname" ng-minlength="2" ng-maxlength="50"> <span ng-show="profileForm.surname.$error.minlength" class="help-block">Surname is too short</span> <span ng-show="profileForm.surname.$error.maxlength" class="help-block">Surname is too long</span>
+					</div>
+					<div class='control-group' ng-class="{warning: !profileForm.email.$valid}">
+						<label>Email Address</label> <input name="email" class='span3' placeholder='Input email address...' type='text' ng-model="userSummary.emailAddress" ng-minlength="3" ng-maxlength="200" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"> <span ng-show="!profileForm.email.$valid" class="help-block">Email not valid</span>
+					</div>
+				</div>
+
+				<!-- Profile picture -->
+				<div class='span3'>
+					<div ng-show="!editingShow" >
+						<img ng-src="{{visibleImage}}" style="width:270px; height:270px"/>
+											
+						<div style="margin-top: 10px; margin-bottom: 15px">
+							<button class='btn btn-primary' ng-click="editPhoto()" >Edit Photo</button>
+							<div style="clear: both"></div>
+						</div>
+					</div>
+					
+					<div ng-show="editingShow">
+						<div class="cropArea">
+							<img-crop image="visibleImage" result-image="croppedProfileImage" area-type="square" result-image-size=450 result-image-quality=1.0 chargement="'Loading'"></img-crop>
+						</div>
+						<input style="width:255px; margin-top:5px;" class="btn btn-default btn-file" type="file" id="profilePhotofileInput" />
+						<div style="margin-top:5px; margin-bottom:15px" >
+							<button class="btn btn-primary" ng-click="editPhotoOk()">Ok</button>
+							<button class="btn" ng-click="editPhotoCancel()">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Profile description -->
+			<div class='row'>
+				<div class='span3'>
+					<div class="control-group" ng-class="{warning: profileForm.profileDesription.$error.maxlength}">
+						<label>Profile Description</label>
+						<textarea name="profileDesription" class="span7" rows="3" placeholder="Tell everyone about yourself, your favorate foods etc..." ng-model="userSummary.profileDescription" ng-maxlength="500"></textarea>
+						<span ng-show="profileForm.profileDesription.$error.maxlength" class="help-block">Profile description is too long</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Save and cancel buttons -->
+			<div class='form-actions no-margin-bottom'>
+				<button class='btn btn-primary' ng-click="saveUserSummary(profileForm)" ng-disabled="profileForm.$invalid || profileForm.$pristine">Save Profile</button>
+				<button class='btn btn-gray' ng-click="cancelChanges()" ng-disabled="profileForm.$pristine">Cancel</button>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
